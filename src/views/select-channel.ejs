@@ -1,0 +1,11 @@
+<h1>Select a Slack Channel</h1>
+<form action="/slack/select-channel" method="POST">
+  <input type="hidden" name="accessToken" value="<%= accessToken %>" />
+  <input type="hidden" name="botUserId" value="<%= botUserId %>" />
+  <select name="channelId">
+    <% channels.forEach(channel => { %>
+    <option value="<%= channel.id %>"><%= channel.name %></option>
+    <% }); %>
+  </select>
+  <button type="submit">Select Channel</button>
+</form>
